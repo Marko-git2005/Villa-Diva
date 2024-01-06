@@ -81,6 +81,10 @@
 .socials{ 
     text-align: center;
     
+    
+}
+.socials i{
+    font-size: 40px;
 }
 .weddings{
     background-color: #7FD9E3;
