@@ -11,7 +11,7 @@
 h1{ 
     text-align: center;
     font-size:9rem;
-    font-family: Barlow-Medium;
+    font-family: Barlow-Medium, Ubuntu-Medium;
     color: #7FD9E3;
     margin-top: 40px;
 }
@@ -22,6 +22,14 @@ h1{
     overflow: hidden;
 }
 .slider img{
+    width: 100%;
+    display: none;
+    max-height: 810px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+    
+}
+.slider video{
     width: 100%;
     display: none;
     max-height: 810px;
@@ -116,7 +124,7 @@ footer a{
 }
 @media (max-width:992px){
     h1{
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
     .slider button{
         font-size: 3rem;
