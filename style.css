@@ -1,157 +1,261 @@
-@font-face{
+@font-face {
     src: url(Fonts/Barlow-SemiBold.ttf);
-    font-family: Barlow-Medium;
+    font-family: 'Barlow-Medium';
 }
-@font-face{
+@font-face {
     src: url(fonts/Ubuntu-Medium.ttf);
-    font-family: Ubuntu-Medium;
+    font-family: 'Ubuntu-Medium';
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-h1{ 
+body {
+    background-color: #f5f1e9;
+    color: #333;
+    font-family: 'Ubuntu-Medium', sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 1rem 0;
+    border-bottom: 4px solid #D4AF37; /* Gold border for accent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.logo {
+    height: 120px;
+    margin-right: 20px;
+    border: 2px solid #D4AF37; /* Gold border around logo */
+    border-radius: 5px;
+    padding: 2px;
+}
+
+h1 {
     text-align: center;
-    font-size:9rem;
-    font-family: Barlow-Medium, Ubuntu-Medium;
-    color: #7FD9E3;
-    margin-top: 40px;
+    font-size: 6rem;
+    font-family: 'Barlow-Medium', sans-serif;
+    color: #000000;
+    text-shadow: 1px 1px 3px rgba(212, 175, 55, 0.3); /* Subtle gold shadow */
+    font-weight: bold;
 }
-.slider{
+
+.slider {
     position: relative;
     width: 100%;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
     overflow: hidden;
 }
-.slider img{
+
+.slides .slide {
     width: 100%;
-    display: none;
-    max-height: 810px;
+    max-height: 600px;
     object-fit: cover;
     aspect-ratio: 16/9;
-    
-}
-.slider video{
-    width: 100%;
     display: none;
-    max-height: 810px;
-    object-fit: cover;
-    aspect-ratio: 16/9;
-    
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
-.slider button{
+
+.slides img {
+    width: 100%;
+    height: 100%;
+}
+
+.slides video {
+    width: 100%;
+    height: 100%;
+}
+
+.slider button {
     position: absolute;
     top: 50%;
-    padding: 10px 15px;
     transform: translateY(-50%);
-    font-size: 5rem;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #D4AF37;
+    border: 2px solid #D4AF37;
+    padding: 1rem;
     cursor: pointer;
+    font-size: 2rem;
+    transition: background-color 0.3s, color 0.3s;
 }
-.prev{
-    left: 0;
 
+.slider button:hover {
+    background-color: #D4AF37;
+    color: #000000;
 }
-.next{
-    right: 0;
+
+.prev {
+    left: 1rem;
 }
-.middle{
-    height: 500px;
+
+.next {
+    right: 1rem;
 }
-.left{
-    background-color: #7FD9E3;
-    width: 50%;
+
+.dots {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
     display: inline-block;
-    height: 100%;
-
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-.right{
+
+.dot.active {
+    background-color: #D4AF37;
+}
+
+.middle {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #D4AF37;
+}
+
+.left, .right {
     width: 50%;
-    display: inline-block;
-    float: right;
-    height: 100%;
+    padding: 2rem;
 }
-.right iframe{
-    background-color: #7FD9E3;
-    width: 100%;
-    height: 100%;
 
-}
-.left p{
-    color: white;
-    font-size: 3.5rem;
-    font-family: Ubuntu-Medium;
+.left p {
+    font-size: 2rem;
+    color: #000000;
+    line-height: 1.5;
     text-align: center;
     display: flex;
-	flex-direction: row;
-	align-items: center
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
-main{
-    background-color: #7FD9E3;
-}
-.moto li{
-    list-style-type: none;
 
+.right iframe {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #D4AF37;
 }
-.moto{
-    text-align: center;
-    color: white;
-    font-family: Ubuntu-Medium;
-    font-size: 3rem;
-    padding-bottom: 30px;
 
-}
-footer{
+.moto {
+    background-color: #D4AF37;
+    padding: 3rem 0;
     text-align: center;
-    color: #7FD9E3;
-    text-decoration: none;
+}
+
+.moto ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.moto li {
     font-size: 2rem;
-    font-family: Ubuntu-Medium;
+    color: #000000;
 }
-footer a{
 
-    color: #7FD9E3;
-    text-decoration: none;
+.moto li span {
+    color: #ffffff;
+    font-weight: bold;
+}
 
-}
-.socials i{
-    font-size: 3.5rem;
-}
-.socials{ 
+footer {
+    background-color: #000000;
+    color: #D4AF37;
     text-align: center;
-    
-    
+    padding: 2rem 0;
+    font-size: 1.5rem;
 }
-@media (max-width:992px){
-    h1{
-        font-size: 4.5rem;
-    }
-    .slider button{
-        font-size: 3rem;
-        
-    }
-    .middle{
-        height: 200px;
-    }
-    .left{
-        background-color: #7FD9E3;
-        width: 100%;
-        display: block;
-    
-    }
-    .left p{
-        font-size: 2rem;
 
+footer a {
+    color: #D4AF37;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+.socials i {
+    font-size: 2.5rem;
+    margin: 0 1rem;
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 4rem;
     }
-    .right{
+
+    .logo {
+        height: 100px;
+    }
+
+    .slider button {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    .middle {
+        flex-direction: column;
+    }
+
+    .left, .right {
         width: 100%;
-        display: block;
+        padding: 1rem;
     }
-    .moto{
-        padding-top: 20px;
+
+    .left p {
+        font-size: 1.5rem;
+    }
+
+    .moto li {
+        font-size: 1.5rem;
+    }
+
+    .socials i {
         font-size: 2rem;
     }
-    .socials i{
-        font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    .logo {
+        height: 100px;
+    }
+
+    .slider {
+        max-width: 100%;
+    }
+
+    .left p {
+        font-size: 1.2rem;
+    }
+
+    .moto li {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 1.2rem;
     }
 }
